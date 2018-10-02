@@ -7,6 +7,8 @@ export default class Statusbar {
     this.$statusbar = context.layoutInfo.statusbar;
     this.$editable = context.layoutInfo.editable;
     this.options = context.options;
+    this.fireResized = () => { context.triggerEvent('resized'); };
+    this.fireResizing = () => { context.triggerEvent('resizing'); };
   }
 
   initialize() {
@@ -27,10 +29,12 @@ export default class Statusbar {
         height = (this.options.maxHeight > 0) ? Math.min(height, this.options.maxHeight) : height;
 
         this.$editable.height(height);
+        this.fireResizing();
       };
 
       this.$document.on('mousemove', onMouseMove).one('mouseup', () => {
         this.$document.off('mousemove', onMouseMove);
+        this.fireResized();
       });
     });
   }

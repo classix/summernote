@@ -182,7 +182,9 @@ $.summernote = $.extend($.summernote, {
       onKeydown: null,
       onImageUpload: null,
       onImageUploadError: null,
-      onImageLinkInsert: null
+      onImageLinkInsert: null,
+      onResized: null,
+      onResizing: null
     },
 
     codemirror: {
