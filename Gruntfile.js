@@ -245,6 +245,14 @@ module.exports = function(grunt) {
           { src: 'lang/*', dest: 'dist/' },
           { expand: true, cwd: 'src/icons/dist/font/', src: ['**', '!*.html'], dest: 'dist/font/' }
         ]
+      },
+      deploy: {
+        files: [{
+          expand: true,
+          cwd: 'dist/',
+          src: '**/*',
+          dest: 'Y:/classix_tools/morphIT/client/thirdparty/summernote'
+        }]
       }
     },
     webfont: {
