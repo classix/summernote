@@ -70,7 +70,7 @@ const palette = renderer.create('<div class="note-color-palette"/>', function($n
         'data-value="', color, '" ',
         'title="', colorName, '" ',
         'aria-label="', colorName, '" ',
-        'data-toggle="button" tabindex="-1"></button>'
+        'data-toggle="button" tabindex="0"></button>'
       ].join(''));
     }
     contents.push('<div class="note-color-row">' + buttons.join('') + '</div>');
@@ -166,7 +166,7 @@ const ui = {
   options: {},
 
   button: function($node, options) {
-    return renderer.create('<button type="button" class="note-btn btn btn-light btn-sm" role="button" tabindex="-1">', function($node, options) {
+    return renderer.create('<button type="button" class="note-btn btn btn-light btn-sm" role="button" tabindex="0">', function($node, options) {
       if (options && options.tooltip) {
         $node.attr({
           title: options.tooltip,

@@ -26,7 +26,7 @@ const airEditable = renderer.create([
 ].join(''));
 
 const buttonGroup = renderer.create('<div class="note-btn-group">');
-const button = renderer.create('<button type="button" class="note-btn" role="button" tabindex="-1">', function($node, options) {
+const button = renderer.create('<button type="button" class="note-btn" role="button" tabindex="0">', function($node, options) {
   // set button type
   if (options && options.tooltip) {
     $node.attr({
@@ -262,7 +262,7 @@ const palette = renderer.create('<div class="note-color-palette"/>', function($n
         'data-value="', color, '" ',
         'title="', colorName, '" ',
         'aria-label="', colorName, '" ',
-        'data-toggle="button" tabindex="-1"></button>'
+        'data-toggle="button" tabindex="0"></button>'
       ].join(''));
     }
     contents.push('<div class="note-color-row">' + buttons.join('') + '</div>');
@@ -392,7 +392,7 @@ const colorDropdownButton = function(opt, type) {
   }).render();
 };
 
-const dialog = renderer.create('<div class="note-modal" aria-hidden="false" tabindex="-1" role="dialog"/>', function($node, options) {
+const dialog = renderer.create('<div class="note-modal" aria-hidden="false" tabindex="0" role="dialog"/>', function($node, options) {
   if (options.fade) {
     $node.addClass('fade');
   }

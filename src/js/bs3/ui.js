@@ -5,7 +5,7 @@ const editor = renderer.create('<div class="note-editor note-frame panel"/>');
 const toolbar = renderer.create('<div class="note-toolbar-wrapper panel-default"><div class="note-toolbar panel-heading" role="toolbar"></div></div>');
 const editingArea = renderer.create('<div class="note-editing-area"/>');
 const codable = renderer.create('<textarea class="note-codable" role="textbox" aria-multiline="true"/>');
-const editable = renderer.create('<div class="note-editable" contentEditable="true" role="textbox" aria-multiline="true"/>');
+const editable = renderer.create('<div class="note-editable" tabindex="0" contentEditable="true" role="textbox" aria-multiline="true"/>');
 const statusbar = renderer.create([
   '<output class="note-status-output" aria-live="polite"/>',
   '<div class="note-statusbar" role="status">',
@@ -69,7 +69,7 @@ const palette = renderer.create('<div class="note-color-palette"/>', function($n
         'data-value="', color, '" ',
         'title="', colorName, '" ',
         'aria-label="', colorName, '" ',
-        'data-toggle="button" tabindex="-1"></button>'
+        'data-toggle="button" tabindex="0"></button>'
       ].join(''));
     }
     contents.push('<div class="note-color-row">' + buttons.join('') + '</div>');
@@ -161,7 +161,7 @@ const ui = {
   options: {},
 
   button: function($node, options) {
-    return renderer.create('<button type="button" class="note-btn btn btn-default btn-sm" role="button" tabindex="-1">', function($node, options) {
+    return renderer.create('<button type="button" class="note-btn btn btn-default btn-sm" role="button" tabindex="0">', function($node, options) {
       if (options && options.tooltip) {
         $node.attr({
           title: options.tooltip,
