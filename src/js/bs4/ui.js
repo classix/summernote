@@ -95,9 +95,9 @@ const dialog = renderer.create('<div class="modal" aria-hidden="false" tabindex=
   });
   $node.html([
     '<div class="modal-dialog">',
-    '  <div class="modal-content">',
+    '  <div class="modal-content dialog">',
     (options.title
-      ? '    <div class="modal-header">' +
+      ? '    <div class="modal-header dialogHeader">' +
     '      <h4 class="modal-title">' + options.title + '</h4>' +
     '      <button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true">&times;</button>' +
     '    </div>' : ''

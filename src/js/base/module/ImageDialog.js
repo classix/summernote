@@ -36,7 +36,7 @@ export default class ImageDialog {
       ' col-md-12" type="text" />',
       '</div>'
     ].join('');
-    const buttonClass = 'btn btn-primary note-btn note-btn-primary note-image-btn';
+    const buttonClass = 'note-btn note-btn-primary note-image-btn';
     const footer = `<button type="submit" href="#" class="${buttonClass}" disabled>${this.lang.image.insert}</button>`;
 
     this.$dialog = this.ui.dialog({
